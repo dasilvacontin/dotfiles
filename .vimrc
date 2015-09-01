@@ -76,10 +76,22 @@ nnoremap <silent> <Leader>C :call fzf#run({
 \   'left':    30
 \ })<CR>
 
-" Crosshair
-hi CursorLine   cterm=NONE ctermbg=235
-hi CursorColumn cterm=NONE ctermbg=235
+" Crosshair - Solarized Base2
+hi CursorLine   gui=NONE guibg=#d7d7af
+hi CursorLine   cterm=NONE ctermbg=7
+
+" links CursorLine styles to CursorColumn
+hi! link CursorColumn CursorLine
+
+" toggle crosshair
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
+" activate/deactive crosshair on window focus/blur
+augroup CursorLine CursorColumn
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
+  au WinLeave * setlocal nocursorline nocursorcolumn
+augroup END
 
 " open-brower.vim config
 nmap <Leader>l <Plug>(openbrowser-open) 
