@@ -94,7 +94,7 @@ augroup CursorLine CursorColumn
 augroup END
 
 " open-brower.vim config
-nmap <Leader>l <Plug>(openbrowser-open) 
+nmap <Leader>l <Plug>(openbrowser-open)
 
 " jump to matching xml tag
 runtime macros/matchit.vim
