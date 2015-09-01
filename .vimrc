@@ -14,6 +14,10 @@ filetype plugin indent on
 
 execute pathogen#infect()
 
+" backup files dir
+" if dir ends with //, swap filename will be built from absolute path
+set directory=~/.backup//
+
 syntax enable " turn on syntax highlighting
 set background=dark
 colorscheme solarized
