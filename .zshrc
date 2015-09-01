@@ -15,8 +15,9 @@ plugins=(git)
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
+umask 022
 source $ZSH/oh-my-zsh.sh
+
 
 # hub is an enriches git with GitHub candy
 # https://github.com/github/hub
