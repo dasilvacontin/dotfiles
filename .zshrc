@@ -52,6 +52,13 @@ fbr() {
   git checkout $(echo "$branch" | sed "s/.* //")
 }
 
+## fcommit - show commit
+fcommit() {
+  local commit
+  commit=$(log1 | fzf-tmux +m) &&
+  git show $(echo "$commit" | sed "s/ .*//")
+}
+
 ## ff - search file contents
 alias ff="ag --nobreak --nonumbers --noheading . | fzf | fpp"
 
