@@ -87,3 +87,8 @@ fkill() {
   fi
 }
 
+# Autocompletion
+
+## Travis autocomp
+[ -f /Users/dasilvacontin/.travis/travis.sh ] && source /Users/dasilvacontin/.travis/travis.sh
+
