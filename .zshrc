@@ -54,10 +54,24 @@ fbr() {
 }
 
 ## fcommit - show commit
+#
+# press enter to view commit in terminal
+# press CTRL-B to open commit in github
 fcommit() {
-  local commit
-  commit=$(log1 | fzf-tmux +m) &&
-  git show $(echo "$commit" | sed "s/ .*//")
+  local out option commit repo
+  out=$(git log --pretty=oneline | fzf-tmux +m --exit-0 --expect=ctrl-b)
+  option=$(head -1 <<< "$out")
+  commit=$(head -2 <<< "$out" | tail -1 | sed "s/ .*//")
+  if [ -n "$commit" ]; then
+    if [ "$option" = ctrl-b ]; then
+      repo=$(git config --get remote.origin.url | sed "s/.*com[\/:]//")
+      repo=$(sed "s/.git$//" <<< "$repo")
+      repo="https://github.com/$repo/commit/$commit"
+      open "$repo"
+    else
+      git show $(echo "$commit")
+    fi
+  fi
 }
 
 ## ff - search file contents
