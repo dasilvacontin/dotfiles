@@ -32,6 +32,7 @@ source $ZSH/oh-my-zsh.sh
 alias log1="git log --pretty=oneline"
 alias zshconfig="vim ~/.zshrc"
 alias git=hub
+alias nr="npm run"
 
 # FZF
 
