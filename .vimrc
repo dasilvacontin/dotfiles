@@ -104,6 +104,8 @@ runtime macros/matchit.vim
 
 " search all matches
 :set hlsearch
+set ignorecase " use \C for case-sensitive
+set smartcase " auto-switch to case-sensitive if capital letters are used
 
 " vim-markdown-preview
 " let vim_markdown_preview_toggle=2
