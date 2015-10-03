@@ -32,6 +32,7 @@ set showcmd " shows info about current command
 " highlight whitespace
 set listchars=tab:▒░,trail:▓
 set list
+set tabstop=4 " renders tabs with 4 char width
 
 set statusline+=%f\  " tail of the filename
 set statusline+=%{fugitive#statusline()} " add git branch to status line
