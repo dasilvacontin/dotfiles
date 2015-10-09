@@ -41,6 +41,9 @@ set statusline+=%{fugitive#statusline()} " add git branch to status line
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" Ctrl+C for yanking to clipboard
+map <C-c> "+y<CR>
+
 " Ctrl+N for opening NERDtree
 map <C-n> :NERDTreeToggle<CR>
 
