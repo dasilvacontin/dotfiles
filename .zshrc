@@ -97,3 +97,24 @@ fkill() {
 ## Travis autocomp
 [ -f /Users/dasilvacontin/.travis/travis.sh ] && source /Users/dasilvacontin/.travis/travis.sh
 
+
+# Plugins (via zgen)
+
+## load zgen
+source "${HOME}/GitHub/tarjoilija/zgen/zgen.zsh"
+
+if ! zgen saved; then
+  echo "Creating a zgen save"
+
+  zgen oh-my-zsh
+
+  zgen load walesmd/caniuse.plugin.zsh
+  zgen load b4b4r07/enhancd
+  zgen load peterhurford/git-aliases.zsh
+  zgen load uvaes/fzf-marks
+
+  zgen save
+fi
+
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
