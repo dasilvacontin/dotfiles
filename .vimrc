@@ -2,17 +2,45 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'open-browser.vim'
+Plugin 'tpope/vim-sensible'
+
+" Git
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+" NERDTree
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" HTML
 Plugin 'closetag.vim'
-" Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'mattn/emmet-vim'
+
+" CSS (and family)
+Plugin 'cakebaker/scss-syntax.vim'
+
+" Coffeescript
+Plugin 'kchmck/vim-coffee-script'
+
+" JSON
+Plugin 'tpope/vim-jdaddy'
+
+" Markdown
 Plugin 'shime/vim-livedown'
+
+" Mustache
+Plugin 'mustache/vim-mustache-handlebars'
+
+" Miscellaneous
+Plugin 'bling/vim-airline'
+Plugin 'open-browser.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 filetype plugin indent on
 
-execute pathogen#infect()
 
 " backup files dir
 " if dir ends with //, swap filename will be built from absolute path
