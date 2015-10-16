@@ -139,10 +139,4 @@ runtime macros/matchit.vim
 set ignorecase " use \C for case-sensitive
 set smartcase " auto-switch to case-sensitive if capital letters are used
 
-" vim-markdown-preview
-" let vim_markdown_preview_toggle=2
-" let vim_markdown_preview_hotkey='<C-m>'
-" let vim_markdown_preview_browser='Google Chrome'
-" let vim_markdown_preview_github=1
-
 nmap gm :LivedownToggle<CR>
