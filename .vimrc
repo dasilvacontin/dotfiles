@@ -118,13 +118,6 @@ hi! link CursorColumn CursorLine
 " toggle crosshair
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
-" activate/deactive crosshair on window focus/blur
-augroup CursorLine CursorColumn
-  au!
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
-  au WinLeave * setlocal nocursorline nocursorcolumn
-augroup END
-
 " open-brower.vim config
 nmap <Leader>l <Plug>(openbrowser-open)
 
