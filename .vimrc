@@ -32,7 +32,7 @@ Plugin 'shime/vim-livedown'
 Plugin 'mustache/vim-mustache-handlebars'
 
 " Miscellaneous
-Plugin 'bling/vim-airline'
+Plugin 'dasilvacontin/vim-airline'
 Plugin 'open-browser.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-sleuth'
