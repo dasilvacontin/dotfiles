@@ -1,5 +1,17 @@
+" Setting up Vundle - the vim plugin bundler
+" From http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+let shouldInstallBundles=0
+let vundleReadmePath=expand('~/.vim/bundle/Vundle.vim/README.md')
+if !filereadable(vundleReadmePath)
+  echo "\nInstalling Vundle...\n"
+  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  let shouldInstallBundles=1
+endif
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+" Plugin List
+" ===========
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'
@@ -39,7 +51,10 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 
 call vundle#end()
-filetype plugin indent on
+if shouldInstallBundles == 1
+  echo "\nInstalling Bundles...\n"
+  :BundleInstall
+endif
 
 
 " backup files dir
