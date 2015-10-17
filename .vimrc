@@ -67,9 +67,14 @@ set background=dark
 colorscheme solarized
 
 set nu " line numbers
-set colorcolumn=80 " highlight column 80
 filetype plugin indent on
 let g:mustache_abbreviations = 1 " vim-mustache-handlebars abbreviations
+" highlight column 80 with old vim support
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 set showcmd " shows info about current command
 
