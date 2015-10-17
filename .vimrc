@@ -59,6 +59,7 @@ endif
 
 " backup files dir
 " if dir ends with //, swap filename will be built from absolute path
+silent !mkdir ~/.backup > /dev/null 2>&1
 set directory=~/.backup//
 
 syntax enable " turn on syntax highlighting
