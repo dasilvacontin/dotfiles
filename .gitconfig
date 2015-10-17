@@ -1,5 +1,7 @@
 [user]
 	name = David da Silva
 	email = dasilvacontin@gmail.com
+[color]
+	ui = true
 [push]
 	default = simple
