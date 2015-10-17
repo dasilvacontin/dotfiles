@@ -1,0 +1,47 @@
+#! /bin/bash
+
+# Colors
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+function log {
+	echo -e "\n${BLUE}${1}${NC}"
+}
+
+log "Checking tmux..."
+if which tmux ; then : nothing; else
+	log "Installing tmux (a 'terminal multiplexer')"
+	log "> Checking curses..."
+	if ls /usr/local/lib | grep curses ; then : nothing; else
+		log "> Installing ncurses (tmux dependency)"
+		git clone https://github.com/gittup/ncurses && cd ncurses
+		./configure && make
+		make install
+		cd .. && rm -rf ncurses
+	fi
+
+	log "> Checking libevent..."
+	if ls /usr/local/lib | grep libevent ; then : nothing; else
+		log "> Installing libevent (tmux dependency)"
+		git clone https://github.com/libevent/libevent && cd libevent
+		./autogen.sh
+		./configure && make
+		make install
+		cd .. && rm -rf libevent
+	fi
+
+	log "> Installing tmux from source"
+	git clone https://github.com/tmux/tmux.git tmux && cd tmux
+	./autogen.sh
+	./configure && make
+	make install
+	cd .. &&  rm -rf tmux
+fi
+
+log "Installing ag (code searching tool with a focus on speed)"
+yum install the_silver_searcher
+
+log "Installing FZF (a general-purpose command-line fuzzy finder)"
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
