@@ -113,6 +113,7 @@ if ! zgen saved; then
   zgen load b4b4r07/enhancd
   zgen load peterhurford/git-aliases.zsh
   zgen load uvaes/fzf-marks
+  zgen load zsh-users/zsh-syntax-highlighting
 
   zgen save
 fi
