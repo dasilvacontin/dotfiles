@@ -63,8 +63,7 @@ silent !mkdir ~/.backup > /dev/null 2>&1
 set directory=~/.backup//
 
 syntax enable " turn on syntax highlighting
-set background=dark
-colorscheme solarized
+colorscheme Tomorrow-Night-Blue
 
 set nu " line numbers
 filetype plugin indent on
