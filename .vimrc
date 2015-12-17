@@ -31,6 +31,9 @@ Plugin 'mattn/emmet-vim'
 " CSS (and family)
 Plugin 'cakebaker/scss-syntax.vim'
 
+" JavaScript
+Plugin 'isRuslan/vim-es6'
+
 " Coffeescript
 Plugin 'kchmck/vim-coffee-script'
 
