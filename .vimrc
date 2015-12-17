@@ -52,6 +52,7 @@ Plugin 'open-browser.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 if shouldInstallBundles == 1
