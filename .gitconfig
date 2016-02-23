@@ -7,3 +7,12 @@
 	default = simple
 [github]
 	user = dasilvacontin
+
+[merge]
+	tool = unityyamlmerge
+
+[mergetool "unityyamlmerge"]
+	trustExitCode = false
+	keepTemporaries = true
+	keepBackup = false
+	cmd = '/Applications/Unity/Unity.app/Contents/Tools/UnityYAMLMerge' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
