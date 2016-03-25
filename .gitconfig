@@ -16,3 +16,6 @@
 	keepTemporaries = true
 	keepBackup = false
 	cmd = '/Applications/Unity/Unity.app/Contents/Tools/UnityYAMLMerge' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
+
+[alias]
+	revert-file = !sh /usr/local/bin/git-file-revert
