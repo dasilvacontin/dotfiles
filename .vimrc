@@ -28,7 +28,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " HTML
-Plugin 'closetag.vim'
 Plugin 'mattn/emmet-vim'
 
 " CSS (and family)
@@ -150,9 +149,6 @@ nmap <Leader>l <Plug>(openbrowser-open)
 
 " jump to matching xml tag
 runtime macros/matchit.vim
-
-" close open xml tag
-:au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim
 
 " search all matches
 :set hlsearch
