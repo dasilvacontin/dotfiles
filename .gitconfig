@@ -20,3 +20,6 @@
 [alias]
 	revert-file = !sh /usr/local/bin/git-file-revert
 	co = checkout
+
+[help]
+	autocorrect = 10
