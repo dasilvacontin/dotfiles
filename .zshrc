@@ -1,5 +1,7 @@
 # ZSH
 
+echo 'Wait a sec, David...'
+
 export ZSH=/Users/dasilvacontin/.oh-my-zsh # Path to your oh-my-zsh installation.
 ZSH_THEME="robbyrussell" # name of the zsh theme to load.
 COMPLETION_WAITING_DOTS="true" # display red dots whilst waiting for completion.
@@ -13,7 +15,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export EDITOR=vim
 
 # Go stuff
@@ -24,6 +26,8 @@ export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 umask 022
 source $ZSH/oh-my-zsh.sh
 
+# Completion
+source <(npm completion)
 
 # hub is an enriches git with GitHub candy
 # https://github.com/github/hub
@@ -39,6 +43,27 @@ alias log1="git log --pretty=oneline"
 alias zshconfig="vim ~/.zshrc"
 alias git=hub
 alias nr="npm run"
+alias grim="git rebase -i 'master^'"
+alias gcane="git commit --amend --no-edit"
+alias gcane-all="git add . && gcane"
+alias serve-webapp="TOGGL_API_HOST=https://www.toggl.space NODE_TLS_REJECT_UNAUTHORIZED=0 grunt serve"
+alias play-tron="ssh sshtron.zachlatta.com"
+eval "$(thefuck --alias)"
+
+
+# Init Fink
+source /sw/bin/init.sh
+
+
+# Git
+
+# Git - Scripts
+
+gdco () {
+  git checkout master
+  git branch -D $1
+  git checkout $1
+}
 
 # FZF
 
@@ -82,6 +107,7 @@ fcommit() {
 
 ## ff - search file contents
 alias ff="ag --nobreak --nonumbers --noheading . | fzf | fpp"
+alias ffx="grep -r . | fzf | fpp"
 
 ## fkill - kill process
 fkill() {
@@ -99,7 +125,22 @@ fkill() {
 [ -f /Users/dasilvacontin/.travis/travis.sh ] && source /Users/dasilvacontin/.travis/travis.sh
 
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+eval "$(direnv hook zsh)" # source env variables at .envrc
+
+
+## LESS ###
+# Enable syntax-highlighting in less.
+# brew install source-highlight
+# First, add these two lines to ~/.bashrc
+export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+export LESS=" -R "
+alias less='less -m -N -g -i -J --underline-special --SILENT'
+alias more='less'
+
 # Plugins (via zgen)
+
 
 ## load zgen
 source "${HOME}/GitHub/tarjoilija/zgen/zgen.zsh"
@@ -113,10 +154,12 @@ if ! zgen saved; then
   zgen load b4b4r07/enhancd
   zgen load peterhurford/git-aliases.zsh
   zgen load uvaes/fzf-marks
+  zgen load dasilvacontin/contrib-rocket
+  zgen load keithhamilton/oh-my-dogesh
   zgen load zsh-users/zsh-syntax-highlighting
 
   zgen save
 fi
 
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export NVM_DIR="/Users/dasilvacontin/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

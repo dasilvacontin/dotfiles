@@ -32,10 +32,15 @@ Plugin 'mattn/emmet-vim'
 
 " CSS (and family)
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'rstacruz/vim-hyperstyle'
 
 " JavaScript
+Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
+Plugin 'rstacruz/vim-closer'
 
+" Jekyll
+Plugin 'parkr/vim-jekyll'
 " Coffeescript
 Plugin 'kchmck/vim-coffee-script'
 
@@ -48,13 +53,24 @@ Plugin 'shime/vim-livedown'
 " Mustache
 Plugin 'mustache/vim-mustache-handlebars'
 
+" tmux
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'sjl/vitality.vim'
+
+" Games
+Plugin 'vim-scripts/HJKL'
+
 " Miscellaneous
-Plugin 'dasilvacontin/vim-airline'
+" Plugin 'dasilvacontin/vim-airline'
 Plugin 'open-browser.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
-Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'junegunn/goyo.vim'
+Plugin 'blueyed/vim-diminactive'
+Plugin 'Chiel92/vim-autoformat'
 
 call vundle#end()
 if shouldInstallBundles == 1
@@ -75,11 +91,21 @@ set nu " line numbers
 filetype plugin indent on
 let g:mustache_abbreviations = 1 " vim-mustache-handlebars abbreviations
 " highlight column 80 with old vim support
-if exists('+colorcolumn')
-  set colorcolumn=80
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
+" if exists('+colorcolumn')
+"   set colorcolumn=80
+" else
+"   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+" endif
+let g:diminactive_enable_focus = 1 " enables vim pane dimmming
+highlight ColorColumn ctermbg=17
+highlight LineNr ctermfg=20
+highlight LineNr ctermbg=18
+let &colorcolumn=join(range(81,999),",")
+au FocusGained * hi LineNr ctermfg=20
+
+" fake vert split bar removal
+set fillchars=""
+hi VertSplit ctermbg=18
 
 set showcmd " shows info about current command
 
@@ -97,6 +123,44 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Ctrl+C for yanking to clipboard
 map <C-c> "+y<CR>
+
+function! Incr()
+  let a = line('.') - line("'<")
+  let c = virtcol("'<")
+  if a > 0
+    execute 'normal! '.c.'|'.a."\<C-a>"
+  endif
+  normal `<
+endfunction
+vnoremap <C-a> :call Incr()<CR>
+
+" window swapping with shift + direction
+function! MarkWindowSwap()
+    " marked window number
+    let g:markedWinNum = winnr()
+    let g:markedBufNum = bufnr("%")
+endfunction
+
+function! DoWindowSwap()
+    let curWinNum = winnr()
+    let curBufNum = bufnr("%")
+    " Switch focus to marked window
+    exe g:markedWinNum . "wincmd w"
+
+    " Load current buffer on marked window
+    exe 'hide buf' curBufNum
+
+    " Switch focus to current window
+    exe curWinNum . "wincmd w"
+
+    " Load marked buffer on current window
+    exe 'hide buf' g:markedBufNum
+endfunction
+
+nnoremap H :call MarkWindowSwap()<CR> <C-w>h :call DoWindowSwap()<CR>
+nnoremap J :call MarkWindowSwap()<CR> <C-w>j :call DoWindowSwap()<CR>
+nnoremap K :call MarkWindowSwap()<CR> <C-w>k :call DoWindowSwap()<CR>
+nnoremap L :call MarkWindowSwap()<CR> <C-w>l :call DoWindowSwap()<CR>
 
 " Ctrl+N for opening NERDtree
 map <C-n> :NERDTreeToggle<CR>
@@ -123,7 +187,7 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 set rtp+=~/.fzf
 
-:let mapleader = "-"
+let mapleader = "-"
 
 nnoremap <silent> <Leader>C :call fzf#run({
 \   'source':
@@ -151,8 +215,10 @@ nmap <Leader>l <Plug>(openbrowser-open)
 runtime macros/matchit.vim
 
 " search all matches
-:set hlsearch
+set hlsearch
 set ignorecase " use \C for case-sensitive
 set smartcase " auto-switch to case-sensitive if capital letters are used
 
 nmap gm :LivedownToggle<CR>
+
+nmap <Leader>s :so ~/.vimrc<CR>
