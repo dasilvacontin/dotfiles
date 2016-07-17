@@ -1,6 +1,6 @@
 # ZSH
 
-export ZSH=/Users/dasilvacontin/.oh-my-zsh # Path to your oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh # Path to your oh-my-zsh installation.
 ZSH_THEME="robbyrussell" # name of the zsh theme to load.
 COMPLETION_WAITING_DOTS="true" # display red dots whilst waiting for completion.
 
