@@ -3,5 +3,8 @@
 	email = dasilvacontin@gmail.com
 [color]
 	ui = true
+[core]
+	pager = less -r
+	editor = vim
 [push]
 	default = simple
