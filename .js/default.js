@@ -56,6 +56,9 @@ function main () {
   // don't execute on embeded pages, probably unwanted and reduces noise
   if (window.top !== window.self) return
 
+  // don't execute on google.com because oh shit waddup
+  if (location.origin.indexOf('google.com') > -1) return
+
   $(window).load(() => {
     setTimeout(() => {
       console.log('hello world! ✨')
