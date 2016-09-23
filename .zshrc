@@ -3,7 +3,7 @@
 echo 'Wait a sec, David...'
 
 export ZSH=/Users/dasilvacontin/.oh-my-zsh # Path to your oh-my-zsh installation.
-ZSH_THEME="robbyrussell" # name of the zsh theme to load.
+ZSH_THEME="dasilvacontin" # name of the zsh theme to load.
 COMPLETION_WAITING_DOTS="true" # display red dots whilst waiting for completion.
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
