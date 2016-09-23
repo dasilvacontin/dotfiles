@@ -181,3 +181,4 @@ fi
 export NVM_DIR="/Users/dasilvacontin/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export PATH="./node_modules/.bin:$PATH"
+export PATH="$PATH:$HOME/Library/Android/sdk/build-tools/23.0.3"
