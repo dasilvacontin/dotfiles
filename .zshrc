@@ -138,8 +138,25 @@ export LESS=" -R "
 alias less='less -m -N -g -i -J --underline-special --SILENT'
 alias more='less'
 
-# Plugins (via zgen)
+js-boilerplate () {
+  cp -a /Users/dasilvacontin/GitHub/dasilvacontin/js-boilerplate/ "$*"
+  cd "$*"
+  rm -rf .git
+  git init
+  git create
+}
 
+goes () {
+  mkdir -p "$*"
+  cd "$*"
+}
+
+my-ip () {
+  ipconfig getifaddr en0
+}
+
+
+# Plugins (via zgen)
 
 ## load zgen
 source "${HOME}/GitHub/tarjoilija/zgen/zgen.zsh"
