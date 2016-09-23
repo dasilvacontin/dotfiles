@@ -182,3 +182,13 @@ export NVM_DIR="/Users/dasilvacontin/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export PATH="./node_modules/.bin:$PATH"
 export PATH="$PATH:$HOME/Library/Android/sdk/build-tools/23.0.3"
+
+
+# https://gist.github.com/WengerK/ad0c1330966522c05f504d71d29f675b
+function f_notifyme {
+  LAST_EXIT_CODE=$?
+  CMD=$(fc -ln -1)
+  # No point in waiting for the command to complete
+  notify "$CMD" "$LAST_EXIT_CODE" &
+}
+export PS1='$(f_notifyme)'$PS1
