@@ -56,8 +56,8 @@ function main () {
   // don't execute on embeded pages, probably unwanted and reduces noise
   if (window.top !== window.self) return
 
-  // don't execute on google.com because oh shit waddup
-  if (location.origin.indexOf('google.com') > -1) return
+  const whitelist = ['google.es', 'google.com', 'vimeo.com', 'eldiario.es']
+  if (whitelist.some((domain) => location.origin.indexOf(domain) > -1)) return
 
   $(window).load(() => {
     setTimeout(() => {
