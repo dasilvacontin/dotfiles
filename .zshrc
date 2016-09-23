@@ -46,7 +46,6 @@ alias nr="npm run"
 alias grim="git rebase -i 'master^'"
 alias gcane="git commit --amend --no-edit"
 alias gcane-all="git add . && gcane"
-alias serve-webapp="TOGGL_API_HOST=https://www.toggl.space NODE_TLS_REJECT_UNAUTHORIZED=0 grunt serve"
 alias play-tron="ssh sshtron.zachlatta.com"
 eval "$(thefuck --alias)"
 
