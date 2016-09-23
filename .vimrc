@@ -72,6 +72,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'junegunn/goyo.vim'
 Plugin 'blueyed/vim-diminactive'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 if shouldInstallBundles == 1
