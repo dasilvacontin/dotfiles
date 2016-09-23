@@ -173,6 +173,7 @@ if ! zgen saved; then
   zgen load dasilvacontin/contrib-rocket
   zgen load keithhamilton/oh-my-dogesh
   zgen load zsh-users/zsh-syntax-highlighting
+  zgen load rauchg/wifi-password
 
   zgen save
 fi
