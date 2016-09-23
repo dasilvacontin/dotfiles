@@ -40,6 +40,12 @@ ln: /Users/dasilvacontin/.vimrc: File exists
 ln: /Users/dasilvacontin/.zshrc: File exists
 ```
 
+## Atom
+
+As [suggested](https://discuss.atom.io/t/installed-packages-list-into-single-file/12227/2) by [@leedohm](https://github.com/lee-dohm), I keep a list of my used packages by [(un)starring them](https://atom.io/users/dasilvacontin/stars). You can easily install yours by doing `apm stars --install`.
+
+[@olmokramer](https://github.com/olmokramer) shared a [simple script](https://discuss.atom.io/t/how-to-unstar-uninstalled-packages/17119/2) to regenerate your starred packages.
+
 ## License
 
 MIT © [David da Silva](http://dasilvacont.in)
