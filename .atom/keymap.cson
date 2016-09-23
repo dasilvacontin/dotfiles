@@ -1,0 +1,69 @@
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts. Unlike style sheets however,
+# each selector can only be declared once.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * https://atom.io/docs/latest/using-atom-basic-customization#customizing-key-bindings
+# * https://atom.io/docs/latest/behind-atom-keymaps-in-depth
+#
+# If you're having trouble with your keybindings not working, try the
+# Keybinding Resolver: `Cmd+.` on OS X and `Ctrl+.` on other platforms. See the
+# Debugging Guide for more information:
+# * https://atom.io/docs/latest/hacking-atom-debugging#check-the-keybindings
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# https://atom.io/docs/latest/using-atom-basic-customization#cson
+'atom-text-editor:not([mini])':
+  'ctrl-shift-m': 'markdown-preview:toggle'
+
+'atom-text-editor.vim-mode-plus':
+  'escape': 'core:cancel'
+
+'.tool-panel.panel-left, .tool-panel.panel-right':
+  'escape': 'core:cancel'
+
+'.atom-text-editor':
+  'ctrl-k': 'window:focus-pane-above' # override darwin's delete til end of line
+  'shift-Z shift-Z': 'core:close'
+  'escape': 'core:cancel'
+
+'.platform-darwin':
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-j': 'window:focus-pane-below'
+  'ctrl-k': 'window:focus-pane-above'
+  'ctrl-l': 'window:focus-pane-on-right'
+
+  'ctrl-s h': 'pane:split-left-and-copy-active-item'
+  'ctrl-s j': 'pane:split-down-and-copy-active-item'
+  'ctrl-s k': 'pane:split-up-and-copy-active-item'
+  'ctrl-s l': 'pane:split-right-and-copy-active-item'
+  'ctrl-s x': 'pane:close'
+
+  'ctrl-cmd-h': 'pane:show-previous-item'
+  'ctrl-cmd-l': 'pane:show-next-item'
+  'ctrl--': 'pane:decrease-size'
+  'ctrl-+': 'pane:increase-size'
+  'ctrl-=': 'pane:increase-size'
+  'ctrl-n': 'tree-view:toggle' # n for nerd-tree
+
+  'ctrl-t h': 'term3:open-split-left'
+  'ctrl-t j': 'term3:open-split-down'
+  'ctrl-t k': 'term3:open-split-up'
+  'ctrl-t l': 'term3:open-split-right'

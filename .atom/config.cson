@@ -1,0 +1,62 @@
+"*":
+  Zen:
+    gutter: true
+    minimap: true
+    softWrap: true
+  "autocomplete-plus":
+    enableBuiltinProvider: false
+    minimumWordLength: 1
+  core:
+    audioBeep: false
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "language-gfm"
+      "nuclide"
+      "language-todo"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "Thumbs.db"
+      ".codekit-cache"
+      "bower_components"
+      "node_modules"
+    ]
+    projectHome: "/Users/dasilvacontin/github/dasilvacontin"
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+  "exception-reporting":
+    userId: "bff161e7-7010-a1cf-3fc6-b79884db2a9c"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "ide-flow":
+    flowPath: "/Users/dasilvacontin/.nvm/versions/node/v6.0.0/lib/node_modules/flow-bin/vendor/flow"
+  linter:
+    errorPanelHeight: 22
+  tabs:
+    alwaysShowTabBar: false
+  "terminal-plus":
+    core: {}
+    style:
+      animationSpeed: 0
+      theme: "homebrew"
+    toggles: {}
+  "tree-view":
+    autoReveal: true
+  welcome:
+    showOnStartup: false
