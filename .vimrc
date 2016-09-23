@@ -38,6 +38,7 @@ Plugin 'rstacruz/vim-hyperstyle'
 Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'rstacruz/vim-closer'
+Plugin 'flowtype/vim-flow'
 
 " Jekyll
 Plugin 'parkr/vim-jekyll'
