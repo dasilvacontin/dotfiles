@@ -139,7 +139,7 @@ alias less='less -m -N -g -i -J --underline-special --SILENT'
 alias more='less'
 
 js-boilerplate () {
-  cp -a /Users/dasilvacontin/GitHub/dasilvacontin/js-boilerplate/ "$*"
+  cp -a /Users/dasilvacontin/GitHub/dasilvacontin/js-boilerplate/ "/Users/dasilvacontin/github/dasilvacontin/$*"
   cd "$*"
   rm -rf .git
   git init
