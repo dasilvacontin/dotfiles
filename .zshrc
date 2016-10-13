@@ -143,7 +143,7 @@ js-boilerplate () {
   cd "$*"
   rm -rf .git
   git init
-  git create
+  git create -p
 }
 
 goes () {
