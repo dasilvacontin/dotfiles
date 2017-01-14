@@ -1,6 +1,9 @@
 " avoid autocommand duplication when resourcing .vimrc
 autocmd!
 
+" Activate mouse for scrolling
+set mouse=a
+
 " Setting up Vundle - the vim plugin bundler
 " From http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
 let shouldInstallBundles=0
