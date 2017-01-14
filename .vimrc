@@ -129,6 +129,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Ctrl+C for yanking to clipboard
 map <C-c> "+y<CR>
 
+" Increment numbers in selection by distance to starting line number
 function! Incr()
   let a = line('.') - line("'<")
   let c = virtcol("'<")
