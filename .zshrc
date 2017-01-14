@@ -156,6 +156,10 @@ my-ip () {
   ipconfig getifaddr en0
 }
 
+gimme () {
+  cd ~/github
+  git clone $1 $1 && cd $1
+}
 
 # Plugins (via zgen)
 
