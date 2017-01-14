@@ -14,24 +14,30 @@ cask 'steam'
 cask 'caffeine'
 cask 'flux'
 cask 'launchbar'
+cask 'mojibar'
 brew 'tree'
 brew 'zsh'
 
 # dev
 cask 'iterm2'
 brew 'tmux'
+brew 'the_silver_searcher'
+brew 'thefuck'
 tap 'goles/battery'
 brew 'battery'
 brew 'hub' # https://hub.github.com
 brew 'direnv'
+cask 'ngrok'
 brew 'jq'
 brew 'fzf'
+brew 'fpp'
 brew 'vim', args: ['override-system-vi']
 cask 'atom'
-brew 'node'
+brew 'nvm'
 brew 'go'
 cask 'java'
 brew 'android-sdk'
+cask 'android-file-transfer'
 cask 'dash'
 
 # design
