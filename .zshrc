@@ -140,10 +140,11 @@ alias more='less'
 
 js-boilerplate () {
   cp -a /Users/dasilvacontin/GitHub/dasilvacontin/js-boilerplate/ "/Users/dasilvacontin/github/dasilvacontin/$*"
-  cd "$*"
+  cd "/Users/dasilvacontin/github/dasilvacontin/$*"
   rm -rf .git
   git init
   git create -p
+  npm install
 }
 
 goes () {
