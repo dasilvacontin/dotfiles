@@ -224,6 +224,8 @@ runtime macros/matchit.vim
 set hlsearch
 set ignorecase " use \C for case-sensitive
 set smartcase " auto-switch to case-sensitive if capital letters are used
+" toggle search highlighting
+:noremap <F4> :set hlsearch! hlsearch?<CR>
 
 nmap gm :LivedownToggle<CR>
 
